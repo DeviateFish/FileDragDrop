@@ -1,4 +1,9 @@
 var FileDragDrop = (function () {
+    var cancelEvent = function (e) {
+        e && e.stopPropagation && e.stopPropagation();
+        e && e.preventDefault && e.preventDefault();
+    };
+    
     var FileDragDrop = function (target, onComplete) {
         if (window.File && window.FileList && window.FileReader) {
             this.target = target;
